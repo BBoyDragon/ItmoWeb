@@ -33,9 +33,26 @@ hr {
     display: flex;
     gap: 60px;
     color: var(--white);
+    justify-content: space-around;
     list-style-type: none;
     font-size: 24px;
 }
+@media (max-width: 768px) {
+    .header {
+        height: 200px;
+    }
+    .menu ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .menu a {
+        width: auto;
+        text-align: center;
+    }
+}
+
 .main {
     background: var(--main);
     width: 100%;
@@ -44,6 +61,14 @@ hr {
 }
 .banner img {
     width: 100%;
+}
+@media (max-width: 768px) {
+    .aside{
+        display: none;
+    }
+    .banner {
+        display: none;
+    }
 }
 .about-theater {
     padding: 0 100px;
@@ -60,6 +85,7 @@ hr {
     color: var(--detail);
     margin: 50px 0;
 }
+
 .theater-header p {
     font-size: 32px;
     line-height: 1.7;
@@ -74,7 +100,12 @@ hr {
     margin-bottom: 60px;
 }
 .theater-header-images img {
-    width: 400px;
+    max-width: 25%;
+    height: auto;
+    flex: 1;
+    object-fit: cover;
+    border-radius: 8px;
+
 }
 .new-films {
     padding: 0 50px;
@@ -142,6 +173,11 @@ hr {
     display: flex;
     justify-content: space-between;
 }
+.services-block ul {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
 .aside {
     height: 250px;
     width: 400px;
@@ -151,6 +187,7 @@ hr {
 }
 .aside img {
     width: 100%;
+    object-fit: cover;
 }
 .footer {
     border-top: 1px solid var(--grey);
@@ -173,4 +210,39 @@ hr {
 }
 .logo{
     box-shadow: 0px 4px 8px white;
+}
+
+.table-container {
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+
+}
+
+.responsive-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+
+.responsive-table th,
+.responsive-table td {
+    text-align: left;
+    width: 100%;
+    border: 1px solid #ddd;
+}
+
+/* Стиль для четных строк */
+.responsive-table tr:nth-child(even) {
+    background-color: var(--grey);
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+/* Стиль для нечетных строк */
+.responsive-table tr:nth-child(odd) {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    background-color: dimgray;
 }
