@@ -18,19 +18,34 @@ document.addEventListener("DOMContentLoaded", () => {
     };
 
     const renderTable = (bookings) => {
-        confirmationTable.innerHTML = "<tr><th>Имя</th><th>Фильм</th><th>Дата и время</th><th>Количество билетов</th></tr>";
+        while (confirmationTable.rows.length > 1) {
+            confirmationTable.deleteRow(1);
+        }
+
         if (!Array.isArray(bookings)) {
             console.error("Данные bookings не являются массивом:", bookings);
             return;
         }
+
         bookings.forEach(booking => {
             const row = document.createElement("tr");
-            row.innerHTML = `
-                <td>${booking.name}</td>
-                <td>${booking.movie}</td>
-                <td>${booking.datetime}</td>
-                <td>${booking.tickets}</td>
-            `;
+
+            const nameCell = document.createElement("td");
+            nameCell.textContent = booking.name;
+            row.appendChild(nameCell);
+
+            const movieCell = document.createElement("td");
+            movieCell.textContent = booking.movie;
+            row.appendChild(movieCell);
+
+            const datetimeCell = document.createElement("td");
+            datetimeCell.textContent = booking.datetime;
+            row.appendChild(datetimeCell);
+
+            const ticketsCell = document.createElement("td");
+            ticketsCell.textContent = booking.tickets;
+            row.appendChild(ticketsCell);
+
             confirmationTable.appendChild(row);
         });
     };
