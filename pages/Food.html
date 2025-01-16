@@ -8,8 +8,10 @@
     <title>Cinema</title>
     <link href="../css/Color.css" rel="stylesheet"/>
     <link href="../css/style.css" rel="stylesheet"/>
+    <link href="../css/Food.css" rel="stylesheet"/>
     <script src="../Scripts/common.js"></script>
     <script src="../Scripts/HighLight.js" defer></script>
+    <script src="../Scripts/CardLoader.js" defer></script>
 </head>
 <body>
 <header class="header">
@@ -26,6 +28,11 @@
     </nav>
 </header>
 <main>
+    <div id="preloader">
+        <img src="https://i.gifer.com/YCZH.gif" alt="Loading...">
+    </div>
+    <div id="error-message" style="display: none;">⚠ Something went wrong. Please try again later.</div>
+    <div class="container" id="food-container"></div>
 
 </main>
 <footer>
